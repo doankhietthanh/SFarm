@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SFarm</title>
+    <link rel="icon" href="/assets/farm.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <div class="loading-page">
+        <div class="loader"></div>
+    </div>
+
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60"></body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#about"><img style="width: 25px" src="./assets/farm.png" alt=""
+                        srcset="" /></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">TRANG CHỦ</a></li>
+                    <li><a href="#sensors">CẢM BIẾN</a></li>
+                    <li><a href="#devices">THIẾT BỊ</a></li>
+                    <li><a href="#contact">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="about" class="jumbotron text-center">
+        <h1>Smart Farm</h1>
+        <p>Luôn sử dụng công nghệ mới nhất</p>
+        <p>UY TÍN - AN TOÀN - CHẤT LƯỢNG</p>
+    </div>
+
+    <div id="sensors" class="container-fluid text-center background">
+        <h1 style="color: #000; font-weight: bold; ">CẢM BIẾN</h1>
+        <h4>Cập nhật trực tiếp từ Firebase</h4>
+        <br>
+        <div class=" row">
+            <div class="col-sm-4">
+                <img style="width: 200px" src="./assets/cambien-01.svg" />
+                <h2
+                    style=" font-weight: bold; color: white; background-color:#eba523; padding: 5px; border-radius: 10px;">
+                    Nhiệt độ</h2>
+                <span id="temp"
+                    style="font-size: 30px; font-weight: bold; color: white; background-color:#3bb344; padding: 5px; border-radius: 10px;">Loading...</span>
+            </div>
+            <div class="col-sm-4">
+                <img style="width: 200px" src="./assets/cambien-02.svg" />
+                <h2
+                    style=" font-weight: bold; color: white; background-color:#eba523; padding: 5px; border-radius: 10px;">
+                    Độ ẩm</h2>
+                <span id="hum"
+                    style="font-size: 30px; font-weight: bold; color: white; background-color:#3bb344; padding: 5px; border-radius: 10px;">Loading...</span>
+            </div>
+            <div class="col-sm-4">
+                <img style="width: 200px" src="./assets/cambien-03.svg" />
+                <h2
+                    style=" font-weight: bold; color: white; background-color:#eba523; padding: 5px; border-radius: 10px;">
+                    Độ sáng</h2>
+                <span id="light"
+                    style="font-size: 30px; font-weight: bold; color: white; background-color:#3bb344; padding: 5px; border-radius: 10px;">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="devices" class="container-fluid">
+        <div class="text-center">
+            <h1 style="color: #000; font-weight: bold;">THIẾT BỊ</h1>
+            <h4>Điều khiển hoạt động vườn hoa</h4>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Máy bơm</h1>
+                    </div>
+                    <div class="panel-body">
+                        <img id="image-motor" src="./assets/water_off.svg" />
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-on" id="btn-motor-on">On</button>
+                        <button class="btn btn-off" id="btn-motor-off">Off</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Bón phân</h1>
+                    </div>
+                    <div class="panel-body">
+                        <img id="image-fertilizer" style="height:120%" src="./assets/fertilizer_off.svg" />
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-on" id="btn-fertilizer-on">On</button>
+                        <button class="btn btn-off" id="btn-fertilizer-off">Off</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Đèn vườn</h1>
+                    </div>
+                    <div class="panel-body">
+                        <img id="image-light" src="./assets/light_off.svg" />
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-on" id="btn-light-on">On</button>
+                        <button class="btn btn-off" id="btn-light-off">Off</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="contact" class="container-fluid bg-grey">
+        <h1 class="text-center" style="color: #000; font-weight: bold;">LIÊN HỆ</h1>
+        <div class="row text-center">
+            <div class="col-sm-5">
+                <div class="row"><a href="https://www.facebook.com/">
+                        <i class="sc-icon ic-fb fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCwZVC8CaF8WN912XuLpaqQQ">
+                        <i class="sc-icon ic-yt fab fa-youtube"></i>
+                    </a>
+                    <a href="https://twitter.com/donaldtrump?lang=en">
+                        <i class="sc-icon ic-tw fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="row text-center">
+                    <img style="width: 80px; margin: 20px; cursor: pointer;" src="./assets/logo_ute.svg" alt="Utex" />
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Tên" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Nội dung"
+                    rows="5"></textarea><br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="submit">Gửi</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <p>NHÓM 2</p>
+        <span><a href="https://www.facebook.com/oaht.25" target="_blank">Phạm Tấn Minh Tiến</a> 19119014 - </span>
+        <span><a href="https://www.facebook.com/profile.php?id=100048349362680" target="_blank">Lê Thiên Hải</a>
+            19119170
+            - </span>
+        <span><a href="https://www.facebook.com/doankhietthanh" target="_blank">Đoàn Khiết Thanh</a> 19119220 - </span>
+        <span><a href="https://www.facebook.com/viet.nguyenc0ng" target="_blank">Nguyễn Công Việt</a> 19119232</span>
+    </footer>
+    <script>
+        setTimeout(() => {
+            const loading_page = document.querySelector(".loading-page");
+            loading_page.style.display = "none";
+        }, 2000);
+    </script>
+    <script src="main.js"></script>
+    <script type="module" src="control.js"></script>
+</body>
+
+</html>
